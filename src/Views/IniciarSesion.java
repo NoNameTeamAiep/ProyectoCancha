@@ -49,6 +49,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         Tusername = new javax.swing.JTextField();
         lblRespuesta = new javax.swing.JLabel();
         Biniciar = new javax.swing.JButton();
+        Bback = new javax.swing.JButton();
         Ppassword = new javax.swing.JPasswordField();
         Bregistro = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
@@ -75,7 +76,9 @@ public class IniciarSesion extends javax.swing.JFrame {
         lblRespuesta.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(lblRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
+        Biniciar.setBackground(new java.awt.Color(0, 0, 0));
         Biniciar.setFont(new java.awt.Font("Bell MT", 1, 12)); // NOI18N
+        Biniciar.setForeground(new java.awt.Color(255, 255, 255));
         Biniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iniciar-sesion.png"))); // NOI18N
         Biniciar.setText("Iniciar Sesion");
         Biniciar.setBorderPainted(false);
@@ -94,9 +97,34 @@ public class IniciarSesion extends javax.swing.JFrame {
                 BiniciarActionPerformed(evt);
             }
         });
-        jPanel1.add(Biniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, -1, -1));
+        jPanel1.add(Biniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
+
+        Bback.setBackground(new java.awt.Color(0, 0, 0));
+        Bback.setFont(new java.awt.Font("Bell MT", 1, 12)); // NOI18N
+        Bback.setForeground(new java.awt.Color(255, 255, 255));
+        Bback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/salida.png"))); // NOI18N
+        Bback.setText("Volver");
+        Bback.setBorderPainted(false);
+        Bback.setContentAreaFilled(false);
+        Bback.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Bback.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iniciar-sesionSelected.png"))); // NOI18N
+        Bback.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        Bback.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Bback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BbackMouseClicked(evt);
+            }
+        });
+        Bback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BbackActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Bback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
         jPanel1.add(Ppassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 130, -1));
 
+        Bregistro.setBackground(new java.awt.Color(0, 0, 0));
+        Bregistro.setForeground(new java.awt.Color(255, 255, 255));
         Bregistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/registro.png"))); // NOI18N
         Bregistro.setBorderPainted(false);
         Bregistro.setContentAreaFilled(false);
@@ -115,7 +143,7 @@ public class IniciarSesion extends javax.swing.JFrame {
                 BregistroActionPerformed(evt);
             }
         });
-        jPanel1.add(Bregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+        jPanel1.add(Bregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,6 +208,16 @@ public class IniciarSesion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BiniciarActionPerformed
 
+    private void BbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BbackMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BbackMouseClicked
+
+    private void BbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BbackActionPerformed
+        Inicio ini = new Inicio();
+        ini.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BbackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,6 +255,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bback;
     private javax.swing.JButton Biniciar;
     private javax.swing.JButton Bregistro;
     private javax.swing.JPasswordField Ppassword;

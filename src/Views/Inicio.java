@@ -67,22 +67,80 @@ public class Inicio extends javax.swing.JFrame {
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 290));
 
         jMenu1.setText("Login");
+        jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu1MenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Registrarse");
+        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu2MenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Opciones");
+        jMenu3.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu3MenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Exit");
         jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jMenu4.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu4MenuSelected(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
+        IniciarSesion login = new IniciarSesion();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu1MenuSelected
+
+    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
+        Registrarse regist = new Registrarse();
+        regist.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu2MenuSelected
+
+    private void jMenu3MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuSelected
+        Menu option = new Menu();
+        option.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu3MenuSelected
+
+    private void jMenu4MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu4MenuSelected
+        this.dispose();
+    }//GEN-LAST:event_jMenu4MenuSelected
 
     /**
      * @param args the command line arguments
