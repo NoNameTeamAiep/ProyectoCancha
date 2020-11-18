@@ -47,6 +47,7 @@ public class Menu extends javax.swing.JFrame {
         lblFecha = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
+        Bback = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -77,6 +78,29 @@ public class Menu extends javax.swing.JFrame {
         lblHora.setText("00:00");
         getContentPane().add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 60, -1));
         getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 280));
+
+        Bback.setBackground(new java.awt.Color(0, 0, 0));
+        Bback.setFont(new java.awt.Font("Bell MT", 1, 12)); // NOI18N
+        Bback.setForeground(new java.awt.Color(255, 255, 255));
+        Bback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/salida.png"))); // NOI18N
+        Bback.setText("Volver");
+        Bback.setBorderPainted(false);
+        Bback.setContentAreaFilled(false);
+        Bback.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Bback.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iniciar-sesionSelected.png"))); // NOI18N
+        Bback.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        Bback.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Bback.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BbackMouseClicked(evt);
+            }
+        });
+        Bback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BbackActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
 
         jMenu1.setText("Administracion");
 
@@ -244,6 +268,16 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
+    private void BbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BbackMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BbackMouseClicked
+
+    private void BbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BbackActionPerformed
+        Inicio ini = new Inicio();
+        ini.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BbackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,6 +314,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bback;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
