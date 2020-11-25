@@ -675,7 +675,7 @@ public class ComisarioAgregar extends javax.swing.JFrame {
                 }else{
                     lblRespuesta.setText(cli.consultaxDatosUnCliente(codigo));
                     if("".equals(lblRespuesta.getText())){
-                        Cliente cl;
+                        Cliente cl;//////////////////////////////////COMENTARIO
                         cl= cli.obtenerDatosCliente();
                         CBtc.setSelectedIndex(cl.getTipoCliente());
                         tRun.setText(cl.getRun());
