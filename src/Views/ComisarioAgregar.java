@@ -510,66 +510,67 @@ public class ComisarioAgregar extends javax.swing.JFrame {
         }
     }
     private void jButton1BotonAgregar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1BotonAgregar
-        lblRespuesta.setText(validarEntero(tCodigo.getText(),"Id cliente"));
-        if("".equals(lblRespuesta.getText())){
-            if("".equals(tRun.getText())){
-                lblRespuesta.setText("Debe ingresar un run");
-                tRun.requestFocus();
-            }else{
-                if("".equals(tNombre.getText())){
-                    lblRespuesta.setText("Debe ingresar un nombre");
-                    tNombre.requestFocus();
-                }else{
-                    if("".equals(tAppat.getText())){
-                        lblRespuesta.setText("Debe Ingresar su apellido paterno");
-                        tAppat.requestFocus();
-                    }else{
-                        if("".equals(tApmat.getText())){
-                            lblRespuesta.setText("Debe ingresar su apellido materno");
-                            tApmat.requestFocus();
-                        }else{
-                            if("".equals(tDireccion.getText())){
-                                lblRespuesta.setText("Debe ingresar una direccion");
-                                tDireccion.requestFocus();
-                            }else{
-                                if("".equals(tTel.getText())){
-                                    lblRespuesta.setText("Debe ingresar un numero de telefono");
-                                    tTel.requestFocus();
-                                }else{
-                                    if("".equals(tEmail.getText())){
-                                        lblRespuesta.setText("Debe de ingresar un email");
-                                        tEmail.requestFocus();
-                                    }else{
-                                        if(CBtc.getSelectedIndex()==0){
-                                            lblRespuesta.setText("Debe de seleccionar una opcion");
-                                            CBtc.requestFocus();
-                                        }else{
-                                            int codigo = Integer.valueOf(tCodigo.getText());
-                                            ControladorComisario cli= new ControladorComisario();
-                                            lblRespuesta.setText(cli.existeCliente(codigo));
-                                            if("".equals(lblRespuesta.getText())){
-                                                cli.agregarCliente(codigo,CBtc.getSelectedIndex(),tRun.getText(),tNombre.getText(),tAppat.getText(),tApmat.getText(),sexoCliente(),tDireccion.getText(),tTel.getText(),tEmail.getText());
-                                                lblRespuesta.setText("Cliente ha sido guardado");
-                                                limpiar();
-                                                tCodigo.requestFocus();
-                                                cargarRegistros();
+    
+   //  lblRespuesta.setText(validarEntero(tCodigo.getText(),"Id cliente"));
+   //     if("".equals(lblRespuesta.getText())){
+   //         if("".equals(tRun.getText())){
+   //             lblRespuesta.setText("Debe ingresar un run");
+   //             tRun.requestFocus();
+   //         }else{
+   //             if("".equals(tNombre.getText())){
+   //                 lblRespuesta.setText("Debe ingresar un nombre");
+   //                 tNombre.requestFocus();
+   //             }else{
+   //                 if("".equals(tAppat.getText())){
+   //                     lblRespuesta.setText("Debe Ingresar su apellido paterno");
+   //                     tAppat.requestFocus();
+   //                 }else{
+   //                     if("".equals(tApmat.getText())){
+   //                         lblRespuesta.setText("Debe ingresar su apellido materno");
+   //                         tApmat.requestFocus();
+   //                     }else{
+   //                         if("".equals(tDireccion.getText())){
+   //                             lblRespuesta.setText("Debe ingresar una direccion");
+   //                             tDireccion.requestFocus();
+    //                        }else{
+   //                             if("".equals(tTel.getText())){
+    //                                lblRespuesta.setText("Debe ingresar un numero de telefono");
+    //                                tTel.requestFocus();
+    //                            }else{
+    //                                if("".equals(tEmail.getText())){
+    //                                    lblRespuesta.setText("Debe de ingresar un email");
+    //                                    tEmail.requestFocus();
+    //                                }else{
+    //                                    if(CBtc.getSelectedIndex()==0){
+    //                                        lblRespuesta.setText("Debe de seleccionar una opcion");
+    //                                        CBtc.requestFocus();
+    //                                    }else{
+    //                                        int codigo = Integer.valueOf(tCodigo.getText());
+                                           // ControladorComisario cli= new ControladorComisario();
+                                           // lblRespuesta.setText(cli.existeCliente(codigo));
+                                          //  if("".equals(lblRespuesta.getText())){
+                                          //      cli.agregarCliente(codigo,CBtc.getSelectedIndex(),tRun.getText(),tNombre.getText(),tAppat.getText(),tApmat.getText(),tDireccion.getText(),tTel.getText(),tEmail.getText());///FALTA SEXO USUARIO
+                                          //      lblRespuesta.setText("Cliente ha sido guardado");
+                                         //       limpiar();
+                                         //       tCodigo.requestFocus();
+                                         //       cargarRegistros();
 
-                                            }else{
-                                                if(!"".equals(lblRespuesta.getText())){
-                                                    lblRespuesta.setText("Id existente");
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }else{
-            tCodigo.requestFocus();
-        }
+                                         //   }else{
+                                         //       if(!"".equals(lblRespuesta.getText())){
+                                         //           lblRespuesta.setText("Id existente");
+                                        //        }
+                                      //      }
+                                    //    }
+                                  //  }
+                            //    }
+                        //    }
+                    //    }
+                //    }
+            //    }
+          //  }
+      //  }else{
+      //      tCodigo.requestFocus();
+      //  }
     }//GEN-LAST:event_jButton1BotonAgregar
 
     private void BmodificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BmodificarActionPerformed
@@ -600,20 +601,20 @@ public class ComisarioAgregar extends javax.swing.JFrame {
                                     tEmail.requestFocus();
                                 }else{
                                     int codigo = Integer.valueOf(tCodigo.getText());
-                                    ControladorComisario cli= new ControladorComisario();
-                                    lblRespuesta.setText(cli.existeCliente(codigo));
-                                    if(!"".equals(lblRespuesta.getText())){
-                                        cli.actualizarCliente(codigo, CBtc.getSelectedIndex(),tRun.getText(),tNombre.getText(), tAppat.getText(),tApmat.getText(),sexoCliente(),tDireccion.getText(), tTel.getText(),tEmail.getText());
-                                        lblRespuesta.setText("Cliente ha sido actualizado");
-                                        limpiar();
-                                        tCodigo.requestFocus();
-                                        cargarRegistros();
-                                    }else{
-                                        if("".equals(lblRespuesta.getText())){
-                                            lblRespuesta.setText("Id no existente en la BD");
-                                            tCodigo.requestFocus();
-                                        }
-                                    }
+                                   // ControladorComisario cli= new ControladorComisario();
+                                   // lblRespuesta.setText(cli.existeCliente(codigo));
+                                   // if(!"".equals(lblRespuesta.getText())){
+                                   //     cli.actualizarCliente(codigo, CBtc.getSelectedIndex(),tRun.getText(),tNombre.getText(), tAppat.getText(),tApmat.getText(),tDireccion.getText(), tTel.getText(),tEmail.getText());///FALTA EL SEXO CLIENTE
+                                    //    lblRespuesta.setText("Cliente ha sido actualizado");
+                                    //    limpiar();
+                                    //    tCodigo.requestFocus();
+                                    //    cargarRegistros();
+                                  //  }else{
+                                 //       if("".equals(lblRespuesta.getText())){
+                                 //           lblRespuesta.setText("Id no existente en la BD");
+                                 //           tCodigo.requestFocus();
+                               //         }
+                              //      }
                                 }
                             }
                         }
@@ -626,23 +627,23 @@ public class ComisarioAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_BmodificarActionPerformed
 
     private void BeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeliminarActionPerformed
-        lblRespuesta.setText(validarEntero(tCodigo.getText(),"Id cliente"));
-        if("".equals(lblRespuesta.getText())){
-            int codigo= Integer.valueOf(tCodigo.getText());
-            ControladorComisario cli= new ControladorComisario();
-            lblRespuesta.setText(cli.eliminarCliente(codigo));
-            if("".equals(lblRespuesta.getText())){
-                lblRespuesta.setText("Los datos del cliente se han eliminado");
-                tCodigo.setText("");
-                tCodigo.requestFocus();
-            }else{
-                lblRespuesta.setText("Los datos no se han podido eliminar, reintente");
-                tCodigo.requestFocus();
-                tCodigo.selectAll();
-            }
-        }else{
-            tCodigo.requestFocus();
-        }
+  //      lblRespuesta.setText(validarEntero(tCodigo.getText(),"Id cliente"));
+  //      if("".equals(lblRespuesta.getText())){
+  //          int codigo= Integer.valueOf(tCodigo.getText());
+  //          ControladorComisario cli= new ControladorComisario();
+  //          lblRespuesta.setText(cli.eliminarCliente(codigo));
+  //          if("".equals(lblRespuesta.getText())){
+  //              lblRespuesta.setText("Los datos del cliente se han eliminado");
+   //             tCodigo.setText("");
+   //             tCodigo.requestFocus();
+   //         }else{
+     //           lblRespuesta.setText("Los datos no se han podido eliminar, reintente");
+       //         tCodigo.requestFocus();
+         //       tCodigo.selectAll();
+     //       }
+     //   }else{
+     //       tCodigo.requestFocus();
+     //   }
     }//GEN-LAST:event_BeliminarActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -658,45 +659,45 @@ public class ComisarioAgregar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        lblRespuesta.setText(validarEntero(tCodigo.getText(),"Id Cliete"));
-        if("".equals(lblRespuesta.getText())){
-            int codigo=Integer.valueOf(tCodigo.getText());
-            ControladorComisario cli= new ControladorComisario();
-            lblRespuesta.setText(cli.existeCliente(codigo));
-            if("".equals(lblRespuesta.getText())){
-                lblRespuesta.setText("El id no se encuaenta en la BD");
-                tCodigo.requestFocus();
-            }else{
-                String mensaje= lblRespuesta.getText();
-                if(mensaje.indexOf("existe")==-1){
-                    lblRespuesta.setText("Id cleinte no fue consultado, reintente");
-                    tCodigo.requestFocus();
-                    Habilitar();
-                }else{
-                    lblRespuesta.setText(cli.consultaxDatosUnCliente(codigo));
-                    if("".equals(lblRespuesta.getText())){
-                        Cliente cl;//////////////////////////////////COMENTARIO
-                        cl= cli.obtenerDatosCliente();
-                        CBtc.setSelectedIndex(cl.getTipoCliente());
-                        tRun.setText(cl.getRun());
-                        tNombre.setText(cl.getNombre());
-                        tAppat.setText(cl.getAppat());
-                        tApmat.setText(cl.getApmat());
-                        if(cl.getSexoC()==false){
-                            rHombre.setSelected(true);
-                        }else{
-                            rMujer.setSelected(true);
-                        }
-                        tDireccion.setText(cl.getDireccion());
-                        tTel.setText(cl.getTel());
-                        tEmail.setText(cl.getEmail());
-                        Bmodificar.setEnabled(true);
-                        Beliminar.setEnabled(true);
-                        Habilitar();
-                    }
-                }
-            }
-        }
+       // lblRespuesta.setText(validarEntero(tCodigo.getText(),"Id Cliete"));
+       // if("".equals(lblRespuesta.getText())){
+       //     int codigo=Integer.valueOf(tCodigo.getText());
+       //     ControladorComisario cli= new ControladorComisario();
+       //     lblRespuesta.setText(cli.existeCliente(codigo));
+       //     if("".equals(lblRespuesta.getText())){
+       //         lblRespuesta.setText("El id no se encuaenta en la BD");
+       //         tCodigo.requestFocus();
+       //     }else{
+       //         String mensaje= lblRespuesta.getText();
+       //         if(mensaje.indexOf("existe")==-1){
+       //             lblRespuesta.setText("Id cleinte no fue consultado, reintente");
+       //             tCodigo.requestFocus();
+       //             Habilitar();
+       //         }else{
+       //             lblRespuesta.setText(cli.consultaxDatosUnCliente(codigo));
+                 //   if("".equals(lblRespuesta.getText())){
+                  //      Cliente cli = new Cliente();
+                 //       cl= cli.obtenerDatosCliente();
+                 //       CBtc.setSelectedIndex(cl.getTipoCliente());
+                 //       tRun.setText(cl.getRun());
+                 //       tNombre.setText(cl.getNombre());
+                 //       tAppat.setText(cl.getAppat());
+                 //       tApmat.setText(cl.getApmat());
+                 //       if(cl.getSexoC()==false){
+                 //           rHombre.setSelected(true);
+                 //       }else{
+                 //           rMujer.setSelected(true);
+                 //       }
+                 //       tDireccion.setText(cl.getDireccion());
+                 //       tTel.setText(cl.getTel());
+                 //       tEmail.setText(cl.getEmail());
+                 //       Bmodificar.setEnabled(true);
+                 //       Beliminar.setEnabled(true);
+                 //       Habilitar();
+    //                }
+    //            }
+    //        }
+    //    }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tBuscarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tBuscarFocusGained
@@ -709,37 +710,37 @@ public class ComisarioAgregar extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
-        while(table.getRowCount()!= 0){
-            ((DefaultTableModel) table.getModel()).removeRow(0);
-        }
-        if("".equals(tBuscar.getText())){
-            tBuscar.setText("Debe ingresar un filtro a consultar. ");
+       // while(table.getRowCount()!= 0){
+       //     ((DefaultTableModel) table.getModel()).removeRow(0);
+       // }
+       // if("".equals(tBuscar.getText())){
+       //     tBuscar.setText("Debe ingresar un filtro a consultar. ");
 
-        }else{
-            ControladorComisario ocp = new ControladorComisario();
-            String mensaje = ocp.consultaxDatosUnClienteFiltrados(tBuscar.getText());
-            if("".equals(mensaje)){ // Hay datos en base al Filtro
-                DefaultTableModel modelo = (DefaultTableModel) table.getModel();
-                Object [] fila = new Object[10];
-                ArrayList<Comisario> listaClientes;
-                listaClientes = ocp.obtenerDatosClienteFiltrados();
-                for(Comisario e : listaClientes){
-                    fila[0] = e.getIdCom();
-                    fila[1] = e.getRunCom();
-                    fila[2] = e.getNombreCom();
-                    fila[3] = e.getAppatCom();
-                    fila[4] = e.getApmatCom();
-                    fila[5] = e.getFonoCom();
-                    fila[6] = e.getEmailCom();
-                    modelo.addRow(fila);
-                }
-            }else{
-                tBuscar.setText(mensaje);
-            }
+       // }else{
+       //     ControladorComisario ocp = new ControladorComisario();
+       //     String mensaje = ocp.consultaxDatosUnClienteFiltrados(tBuscar.getText());
+       //     if("".equals(mensaje)){ // Hay datos en base al Filtro
+       //         DefaultTableModel modelo = (DefaultTableModel) table.getModel();
+       //         Object [] fila = new Object[10];
+       //         ArrayList<Comisario> listaClientes;
+       //         listaClientes = ocp.obtenerDatosClienteFiltrados();
+       //         for(Comisario e : listaClientes){
+       //             fila[0] = e.getIdCom();
+       //             fila[1] = e.getRunCom();
+       //             fila[2] = e.getNombreCom();
+       //             fila[3] = e.getAppatCom();
+       //             fila[4] = e.getApmatCom();
+       //             fila[5] = e.getFonoCom();
+       //             fila[6] = e.getEmailCom();
+        //            modelo.addRow(fila);
+        //        }
+       //     }else{
+       //         tBuscar.setText(mensaje);
+       //     }
 
-        }
-        tBuscar.selectAll();
-        tBuscar.requestFocus();
+       // }
+       // tBuscar.selectAll();
+       // tBuscar.requestFocus();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
