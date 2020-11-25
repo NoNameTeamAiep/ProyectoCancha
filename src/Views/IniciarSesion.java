@@ -48,6 +48,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         Tusername = new javax.swing.JTextField();
         lblRespuesta = new javax.swing.JLabel();
+        Brecuperar = new javax.swing.JButton();
         Biniciar = new javax.swing.JButton();
         Bback = new javax.swing.JButton();
         Ppassword = new javax.swing.JPasswordField();
@@ -75,6 +76,29 @@ public class IniciarSesion extends javax.swing.JFrame {
         lblRespuesta.setFont(new java.awt.Font("Century", 1, 12)); // NOI18N
         lblRespuesta.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(lblRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
+
+        Brecuperar.setBackground(new java.awt.Color(0, 0, 0));
+        Brecuperar.setFont(new java.awt.Font("Bell MT", 1, 12)); // NOI18N
+        Brecuperar.setForeground(new java.awt.Color(255, 255, 255));
+        Brecuperar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/inicio de sesion2.png"))); // NOI18N
+        Brecuperar.setText("Recuperar password");
+        Brecuperar.setBorderPainted(false);
+        Brecuperar.setContentAreaFilled(false);
+        Brecuperar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Brecuperar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iniciar-sesion3.png"))); // NOI18N
+        Brecuperar.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        Brecuperar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Brecuperar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrecuperarMouseClicked(evt);
+            }
+        });
+        Brecuperar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrecuperarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Brecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
 
         Biniciar.setBackground(new java.awt.Color(0, 0, 0));
         Biniciar.setFont(new java.awt.Font("Bell MT", 1, 12)); // NOI18N
@@ -107,7 +131,7 @@ public class IniciarSesion extends javax.swing.JFrame {
         Bback.setBorderPainted(false);
         Bback.setContentAreaFilled(false);
         Bback.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Bback.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iniciar-sesionSelected.png"))); // NOI18N
+        Bback.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/salida (1).png"))); // NOI18N
         Bback.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         Bback.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         Bback.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,7 +168,7 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Bregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
-        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
+        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 320));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,6 +242,16 @@ public class IniciarSesion extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_BbackActionPerformed
 
+    private void BrecuperarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrecuperarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BrecuperarMouseClicked
+
+    private void BrecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrecuperarActionPerformed
+        RecuperarPassword recu = new RecuperarPassword();
+        recu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BrecuperarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -257,6 +291,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bback;
     private javax.swing.JButton Biniciar;
+    private javax.swing.JButton Brecuperar;
     private javax.swing.JButton Bregistro;
     private javax.swing.JPasswordField Ppassword;
     private javax.swing.JTextField Tusername;
