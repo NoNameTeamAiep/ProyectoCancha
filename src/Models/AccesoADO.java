@@ -17,7 +17,7 @@ public class AccesoADO {
             try
             {
                 String cadena;
-                String nombreServidor="AB-PC";
+                String nombreServidor="DESKTOP-QKL9PPC";
                 String nombreBD="Olimpiada";
                 String nombreUsuario="usuarioSQL";
                 String llave="123";
