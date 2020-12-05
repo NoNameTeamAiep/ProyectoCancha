@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Views;
 
 import java.awt.Image;
@@ -10,10 +6,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import Controllers.*;
 
-/**
- *
- * @author ab
- */
+
 public class IniciarSesion extends javax.swing.JFrame {
 
     /**
@@ -161,7 +154,23 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BiniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BiniciarMouseClicked
-        lblRespuesta.setText("");
+     
+    }//GEN-LAST:event_BiniciarMouseClicked
+
+    private void BregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BregistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BregistroActionPerformed
+
+    private void BregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BregistroMouseClicked
+    ControladorAcceso ac= new ControladorAcceso();
+    if("".equals(ac.verificaConexion())){
+    new Registrarse().setVisible(true);
+    this.dispose();
+    }
+    }//GEN-LAST:event_BregistroMouseClicked
+
+    private void BiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BiniciarActionPerformed
+           lblRespuesta.setText("");
         if("".equals(Tusername.getText())){
             lblRespuesta.setText("Ingrese el username");
             Tusername.requestFocus();
@@ -189,23 +198,7 @@ public class IniciarSesion extends javax.swing.JFrame {
                     }
                 }
             }
-        }
-    }//GEN-LAST:event_BiniciarMouseClicked
-
-    private void BregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BregistroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BregistroActionPerformed
-
-    private void BregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BregistroMouseClicked
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new Registrarse().setVisible(true);
-    this.dispose();
-    }
-    }//GEN-LAST:event_BregistroMouseClicked
-
-    private void BiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BiniciarActionPerformed
-        // TODO add your handling code here:
+        }// TODO add your handling code here:
     }//GEN-LAST:event_BiniciarActionPerformed
 
     private void BbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BbackMouseClicked
