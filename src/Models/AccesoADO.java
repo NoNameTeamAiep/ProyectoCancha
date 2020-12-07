@@ -16,16 +16,16 @@ public class AccesoADO {
 
             try
             {
-                String cadena;
+                String connectionURL;
                 String nombreServidor="DESKTOP-QKL9PPC";
                 String nombreBD="Olimpiada";
-                String nombreUsuario="usuarioSQL";
-                String llave="123";
+                String nombreUsuario="userSQL";
+                String llave="321";
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 
-                cadena = "jdbc:sqlserver://" + nombreServidor + ":1433;databaseName=" + nombreBD + 
+                connectionURL = "jdbc:sqlserver://" + nombreServidor + ":1433;databaseName=" + nombreBD + 
                         ";user=" + nombreUsuario + ";password=" + llave;            
-                conexion= DriverManager.getConnection(cadena);
+                conexion= DriverManager.getConnection(connectionURL);
                 return conexion;
             } catch(ClassNotFoundException ex) {
                 JOptionPane.showMessageDialog(null, ex, "Error1 en la Conexión con la BD "+ex.getMessage(), JOptionPane.ERROR_MESSAGE);
