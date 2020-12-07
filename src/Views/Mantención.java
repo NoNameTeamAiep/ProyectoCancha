@@ -2,6 +2,7 @@ package Views;
 
 import Models.*;
 
+
 public class Mantención extends javax.swing.JFrame {
 
     public Mantención() {
@@ -196,13 +197,25 @@ public class Mantención extends javax.swing.JFrame {
     }//GEN-LAST:event_b_RestablecerActionPerformed
 
     private void b_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_ConfirmarActionPerformed
-        // Este Uso no.   
+                l_Mensajes.setText("");
+        if("".equals(txt_IdCancha.getText())){
+            l_Mensajes.setText("Ingrese el id de la cancha a realizar la mantención");
+            txt_IdCancha.requestFocus();
+        }else{
+            if("".equals(txt_TipoCancha.getText())){
+                l_Mensajes.setText("Ingrese el tipo de cancha que se realice mantención");
+                txt_TipoCancha.requestFocus();
+            }else if ("".equals(ta_Descripcion.getText())){
+                l_Mensajes.setText("Agregue una descripción de la mantención que se realizará");
+                ta_Descripcion.requestFocus();
+            }
+        }
     }//GEN-LAST:event_b_ConfirmarActionPerformed
 
     private void b_ConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_ConfirmarMouseClicked
-        MantenciónADO mantAdo = new MantenciónADO();
+      // MantenciónADO mantAdo = new MantenciónADO();
         
-        mantAdo.GetConnection();
+       // mantAdo.GetConnection();
     }//GEN-LAST:event_b_ConfirmarMouseClicked
 
     /**

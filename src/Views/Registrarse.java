@@ -248,31 +248,31 @@ public class Registrarse extends javax.swing.JFrame {
         }else{
             if("".equals(txt_Nombre.getText())){
                 l_Mensajes.setText("Ingrese su Mombre");
-                txt_Username.requestFocus();
+                txt_Nombre.requestFocus();
             }else{
                 if("".equals(txt_apPat.getText())){
                     l_Mensajes.setText("Ingrese su Apellido Paterno");
-                    txt_Username.requestFocus();
+                    txt_apPat.requestFocus();
                 }else{
                     if("".equals(txt_apMat.getText())){
                         l_Mensajes.setText("Ingrese su Apellido Paterno");
-                        txt_Username.requestFocus();
+                        txt_apMat.requestFocus();
                     }else{
                         if("".equals(txt_Email.getText())){
                             l_Mensajes.setText("Ingrese su dirección de email");
-                            txt_Username.requestFocus();
+                            txt_Email.requestFocus();
                         }else{
                             if("".equals(txt_confEmail.getText())){
                                 l_Mensajes.setText("Confirme su dirección de email");
-                                txt_Username.requestFocus();
+                                txt_confEmail.requestFocus();
                             }else{
                                 if("".equals(txt_Password.getText())){
                                     l_Mensajes.setText("Ingrese contraseña");
-                                    txt_Username.requestFocus();
+                                    txt_Password.requestFocus();
                                 }else{
                                     if("".equals(txt_confPassword.getText())){
                                         l_Mensajes.setText("Ingrese nuevamente su contraseña");
-                                        txt_Username.requestFocus();
+                                        txt_confPassword.requestFocus();
                                     }
                                 }
                             }
