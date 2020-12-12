@@ -21,7 +21,7 @@ public class ControladorAcceso {
         int verificaAcceso = ovado.verificarAcceso(username, password);    
         switch(verificaAcceso){
             case 0:
-                return "Username : " + username + " y su password No existe en la BD Peluqueria. ";
+                return "Username : " + username + " y su password No existe en la BD Olimpiada. ";
             case 1:
                 return ""; // Credenciales existen
             default:
@@ -34,7 +34,7 @@ public class ControladorAcceso {
         
         switch(verificaUsername){
             case 0:
-                return "Username : " + username + " no existe en la BD Ventas. ";
+                return "Username : " + username + " no existe en la BD Olimpiada. ";
             case 1:
                 return ""; //Usuario existe en BD Ventas 
             default:

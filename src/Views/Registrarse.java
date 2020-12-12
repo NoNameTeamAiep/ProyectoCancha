@@ -1,6 +1,7 @@
 
 package Views;
 
+import Controllers.*;
 
 public class Registrarse extends javax.swing.JFrame {
 
@@ -238,6 +239,8 @@ public class Registrarse extends javax.swing.JFrame {
         txt_Password.setText("");
         txt_confPassword.setText("");
         
+        txt_Username.requestFocus();
+        
     }//GEN-LAST:event_b_RestablecerActionPerformed
 
     private void b_RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_RegistrarseActionPerformed
@@ -255,7 +258,7 @@ public class Registrarse extends javax.swing.JFrame {
                     txt_apPat.requestFocus();
                 }else{
                     if("".equals(txt_apMat.getText())){
-                        l_Mensajes.setText("Ingrese su Apellido Paterno");
+                        l_Mensajes.setText("Ingrese su Apellido Materno");
                         txt_apMat.requestFocus();
                     }else{
                         if("".equals(txt_Email.getText())){
@@ -271,7 +274,7 @@ public class Registrarse extends javax.swing.JFrame {
                                     txt_Password.requestFocus();
                                 }else{
                                     if("".equals(txt_confPassword.getText())){
-                                        l_Mensajes.setText("Ingrese nuevamente su contraseña");
+                                        l_Mensajes.setText("Ingrese nuevamente su contraseña, que coincida con la anterior");
                                         txt_confPassword.requestFocus();
                                     }
                                 }
@@ -282,6 +285,11 @@ public class Registrarse extends javax.swing.JFrame {
                 }
             }
         }
+        ControladorAcceso oca = new ControladorAcceso();
+        oca.verificaConexion();
+        oca.verificaUsername(txt_Username.getText());
+        oca.verificaCredenciales(txt_Username.getText(), txt_Password.getText());
+        oca.verificaPassword(txt_Username.getText(), txt_Password.getText());
     }//GEN-LAST:event_b_RegistrarseActionPerformed
 
     /**

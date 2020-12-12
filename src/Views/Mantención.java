@@ -191,9 +191,8 @@ public class Mantención extends javax.swing.JFrame {
         txt_IdCancha.setText("");
         txt_TipoCancha.setText("");
         ta_Descripcion.setText("");
-        
-        l_Mensajes.setText("");
-        
+         
+        txt_IdCancha.requestFocus();
     }//GEN-LAST:event_b_RestablecerActionPerformed
 
     private void b_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_ConfirmarActionPerformed

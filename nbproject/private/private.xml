@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/erosi/OneDrive/Desktop/AIEP/cuarto%20Semestre/Proyecto/GestionJuegosOlimpicos/src/Models/MantenciónADO.java</file>
-            <file>file:/C:/Users/erosi/OneDrive/Desktop/AIEP/cuarto%20Semestre/Proyecto/GestionJuegosOlimpicos/src/Models/AccesoADO.java</file>
-            <file>file:/C:/Users/erosi/OneDrive/Desktop/AIEP/cuarto%20Semestre/Proyecto/GestionJuegosOlimpicos/src/Models/Acceso.java</file>
-            <file>file:/C:/Users/erosi/OneDrive/Desktop/AIEP/cuarto%20Semestre/Proyecto/GestionJuegosOlimpicos/src/Views/Mantención.java</file>
-            <file>file:/C:/Users/erosi/OneDrive/Desktop/AIEP/cuarto%20Semestre/Proyecto/GestionJuegosOlimpicos/src/Views/IniciarSesion.java</file>
+            <file>file:/C:/Users/Jaime%20Ernesto/Documents/GitHub/ProyectoCancha/src/Views/Mantención.java</file>
+            <file>file:/C:/Users/Jaime%20Ernesto/Documents/GitHub/ProyectoCancha/src/Views/Registrarse.java</file>
+            <file>file:/C:/Users/Jaime%20Ernesto/Documents/GitHub/ProyectoCancha/src/Controllers/ControladorAcceso.java</file>
+            <file>file:/C:/Users/Jaime%20Ernesto/Documents/GitHub/ProyectoCancha/src/Views/IniciarSesion.java</file>
+            <file>file:/C:/Users/Jaime%20Ernesto/Documents/GitHub/ProyectoCancha/src/Models/Acceso.java</file>
         </group>
     </open-files>
 </project-private>
