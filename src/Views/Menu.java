@@ -43,11 +43,11 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Bback = new javax.swing.JButton();
         lblRespuesta1 = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         lblHora = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
-        Bback = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -62,22 +62,17 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem24 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(lblRespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
-
-        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
-        lblFecha.setText("00/00/0000");
-        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
-
-        lblHora.setForeground(new java.awt.Color(255, 255, 255));
-        lblHora.setText("00:00");
-        getContentPane().add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 60, -1));
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 280));
 
         Bback.setBackground(new java.awt.Color(0, 0, 0));
         Bback.setFont(new java.awt.Font("Bell MT", 1, 12)); // NOI18N
@@ -101,6 +96,16 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Bback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
+        getContentPane().add(lblRespuesta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        lblFecha.setText("00/00/0000");
+        getContentPane().add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 220, -1, -1));
+
+        lblHora.setForeground(new java.awt.Color(255, 255, 255));
+        lblHora.setText("00:00");
+        getContentPane().add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 60, -1));
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 280));
 
         jMenu1.setText("Administracion");
 
@@ -178,6 +183,42 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu9.setText("Opciones");
+
+        jMenuItem2.setText("Cambio UserName");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem2);
+
+        jMenuItem3.setText("Cambio Password");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem3);
+
+        jMenuItem5.setText("Cambio Datos");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem5);
+
+        jMenuItem4.setText("Mantencion");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu9);
+
         jMenu3.setText("Exit");
 
         jMenuItem11.setText("Salir");
@@ -204,54 +245,41 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new Solicitudes().setVisible(true);
-    this.dispose();
-    }
+        Solicitudes soli =new Solicitudes();
+        soli.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new ComplejoAgregar().setVisible(true);
-    this.dispose();
-    }
-        // TODO add your handling code here:
+        ComplejoAgregar cma = new ComplejoAgregar();
+        cma.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new ComisarioAgregar().setVisible(true);
-    this.dispose();
-    }
+        ComisarioAgregar ca = new ComisarioAgregar();
+        ca.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
-     ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new PolideportivoAgregar().setVisible(true);
-    this.dispose();
-    }
-        // TODO add your handling code here:
+        PolideportivoAgregar pda = new PolideportivoAgregar();
+        pda.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem20ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
- ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new UnicoAgregar().setVisible(true);
-    this.dispose();
-    }        // TODO add your handling code here:
+        UnicoAgregar ua= new UnicoAgregar();
+        ua.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new CanchaAgregar().setVisible(true);
-    this.dispose();
-    } 
-        // TODO add your handling code here:
+        CanchaAgregar cna = new CanchaAgregar();
+        cna.setVisible(true);
+        
+        this.dispose();
     }//GEN-LAST:event_jMenuItem24ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
@@ -260,12 +288,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new IniciarSesion().setVisible(true);
-    this.dispose();
-    } 
-        // TODO add your handling code here:
+        IniciarSesion ini = new IniciarSesion();
+        ini.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void BbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BbackMouseClicked
@@ -277,6 +302,30 @@ public class Menu extends javax.swing.JFrame {
         ini.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BbackActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        CambioUserN cu = new CambioUserN();
+        cu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        CambiodePassword cp = new CambiodePassword();
+        cp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        CambiodeDatos cd = new CambiodeDatos();
+        cd.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Mantencion mnt = new Mantencion();
+        mnt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,14 +372,19 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFondo;

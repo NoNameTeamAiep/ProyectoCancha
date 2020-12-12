@@ -9,6 +9,10 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import Controllers.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,9 +20,10 @@ import Controllers.*;
  */
 public class IniciarSesion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form IniciarSesion
-     */
+    ControladorAcceso conexion = new ControladorAcceso();
+    Connection con = conexion.conectar();
+    private String user, password;
+    
     public IniciarSesion() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -47,11 +52,12 @@ public class IniciarSesion extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
         Tusername = new javax.swing.JTextField();
+        Ppassword = new javax.swing.JTextField();
         lblRespuesta = new javax.swing.JLabel();
         Biniciar = new javax.swing.JButton();
         Bback = new javax.swing.JButton();
-        Ppassword = new javax.swing.JPasswordField();
         Bregistro = new javax.swing.JButton();
+        Brecuperar = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,9 +77,10 @@ public class IniciarSesion extends javax.swing.JFrame {
 
         Tusername.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPanel1.add(Tusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 130, -1));
+        jPanel1.add(Ppassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 130, -1));
 
         lblRespuesta.setFont(new java.awt.Font("Century", 1, 12)); // NOI18N
-        lblRespuesta.setForeground(new java.awt.Color(255, 0, 0));
+        lblRespuesta.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(lblRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
 
         Biniciar.setBackground(new java.awt.Color(0, 0, 0));
@@ -121,7 +128,6 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Bback, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
-        jPanel1.add(Ppassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 130, -1));
 
         Bregistro.setBackground(new java.awt.Color(0, 0, 0));
         Bregistro.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,6 +150,14 @@ public class IniciarSesion extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Bregistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+
+        Brecuperar.setText("recuperar clave");
+        Brecuperar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrecuperarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Brecuperar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,35 +175,7 @@ public class IniciarSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BiniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BiniciarMouseClicked
-        lblRespuesta.setText("");
-        if("".equals(Tusername.getText())){
-            lblRespuesta.setText("Ingrese el username");
-            Tusername.requestFocus();
-        }else{
-            String llave = String.valueOf(Ppassword.getPassword());
-            if("".equals(llave)){
-                lblRespuesta.setText("Ingrese la Password");
-                Ppassword.requestFocus();
-            }else{
-                ControladorAcceso ac = new ControladorAcceso();
-                lblRespuesta.setText(ac.verificaCredenciales(Tusername.getText(), llave)); //Verifica username y llave existen en la BD
-                if("".equals(lblRespuesta.getText())){
-                    //OK
-                    this.dispose();
-                    new Menu().setVisible(true);
-                }else{
-                    lblRespuesta.setText(ac.verificaUsername(Tusername.getText())); //Verifica si Username es valido
-                    if("".equals(lblRespuesta.getText())){
-                        lblRespuesta.setText(ac.verificaPassword(Tusername.getText(), llave)); //Veridica llave de Username
-                        Ppassword.requestFocus();
-                        Ppassword.selectAll();
-                    }else{
-                        Tusername.requestFocus();
-                        Tusername.selectAll();
-                    }
-                }
-            }
-        }
+
     }//GEN-LAST:event_BiniciarMouseClicked
 
     private void BregistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BregistroActionPerformed
@@ -197,15 +183,38 @@ public class IniciarSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_BregistroActionPerformed
 
     private void BregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BregistroMouseClicked
-    ControladorAcceso ac= new ControladorAcceso();
-    if("".equals(ac.verificaConexion())){
-    new Registrarse().setVisible(true);
-    this.dispose();
-    }
+
     }//GEN-LAST:event_BregistroMouseClicked
 
     private void BiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BiniciarActionPerformed
-        // TODO add your handling code here:
+        user = Tusername.getText();
+    password =Ppassword.getText();
+    conexion.userName=user;
+    try{
+    String sql= "Select * from login where username = ? and llave = ?";
+    PreparedStatement pat= con.prepareStatement(sql);
+    pat.setString(1,user);
+    pat.setString(2,password);
+    ResultSet rs= pat.executeQuery();
+        if(rs.next()){
+        JOptionPane.showMessageDialog(null,"Usuario y Clave encontrados");
+        Menu menu= new Menu();
+        menu.setVisible(true);
+        this.setVisible(false);
+        
+        
+        }
+        else{
+        JOptionPane.showMessageDialog(null,"Usuario y Clave no encontradas");
+        Tusername.setText("");
+        Ppassword.setText("");
+        }
+        con.close();
+    }
+    catch(Exception ex)
+    {
+    JOptionPane.showMessageDialog(null, ex);
+    }
     }//GEN-LAST:event_BiniciarActionPerformed
 
     private void BbackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BbackMouseClicked
@@ -217,6 +226,12 @@ public class IniciarSesion extends javax.swing.JFrame {
         ini.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BbackActionPerformed
+
+    private void BrecuperarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrecuperarActionPerformed
+        RecuperarPassword rp = new RecuperarPassword();
+        rp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BrecuperarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,8 +272,9 @@ public class IniciarSesion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bback;
     private javax.swing.JButton Biniciar;
+    private javax.swing.JButton Brecuperar;
     private javax.swing.JButton Bregistro;
-    private javax.swing.JPasswordField Ppassword;
+    private javax.swing.JTextField Ppassword;
     private javax.swing.JTextField Tusername;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblFondo;
