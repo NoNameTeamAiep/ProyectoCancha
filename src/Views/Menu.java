@@ -214,7 +214,7 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
     ControladorAcceso ac= new ControladorAcceso();
     if("".equals(ac.verificaConexion())){
-    new ComplejoAgregar().setVisible(true);
+    new GestionDeportes().setVisible(true);
     this.dispose();
     }
         // TODO add your handling code here:
@@ -223,7 +223,7 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
     ControladorAcceso ac= new ControladorAcceso();
     if("".equals(ac.verificaConexion())){
-    new ComisarioAgregar().setVisible(true);
+    new GestionUsuarios().setVisible(true);
     this.dispose();
     }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
@@ -248,7 +248,7 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
     ControladorAcceso ac= new ControladorAcceso();
     if("".equals(ac.verificaConexion())){
-    new CanchaAgregar().setVisible(true);
+    new GestionDeportes().setVisible(true);
     this.dispose();
     } 
         // TODO add your handling code here:
