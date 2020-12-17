@@ -11,7 +11,7 @@ public class ControladorAcceso {
    public String verificaConexion(){
        
         if(ovado.GetConnection()==null){
-            return "No hay conexión a la BD Ventas";
+            return "No hay conexión a la BD Olimpiada.";
         }else{
             return ""; //Si hay conexion
         }

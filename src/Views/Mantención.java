@@ -1,6 +1,12 @@
 package Views;
 
+import Controllers.*;
 import Models.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 
 public class Mantención extends javax.swing.JFrame {
@@ -35,6 +41,8 @@ public class Mantención extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 102, 0));
 
@@ -117,7 +125,7 @@ public class Mantención extends javax.swing.JFrame {
                                     .addComponent(txt_TipoCancha)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                        .addGap(0, 72, Short.MAX_VALUE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -160,24 +168,18 @@ public class Mantención extends javax.swing.JFrame {
                             .addComponent(b_Cerrar))
                         .addGap(34, 34, 34)
                         .addComponent(l_Mensajes)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(40, 77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(55, 55, 55))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -208,6 +210,36 @@ public class Mantención extends javax.swing.JFrame {
                 l_Mensajes.setText("Agregue una descripción de la mantención que se realizará");
                 ta_Descripcion.requestFocus();
             }
+        }
+        ControladorAcceso oacc = new ControladorAcceso();
+        oacc.verificaConexion();
+        oacc.verificaCredenciales(txt_IdCancha.getText(), txt_TipoCancha.getText());
+        
+        PreparedStatement ps = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        try{
+            ps = conn.prepareStatement("Insert Into Mantencion VALUES");
+            ps.setInt(1, 11);
+            ps.setInt(2, 2);
+            ps.setInt(3, 30);
+            ps.setInt(4, 100);
+            ps.setInt(5, 25);
+            ps.setInt(6, 0);
+            ps.setInt(7, 22);
+            ps.setInt(8, 1);
+            ps.setInt(9, 20);
+            ps.setInt(10, 300);
+            ps.setInt(11, 15);
+            ps.setInt(12, 1);
+            ps.setInt(13, 33);
+            ps.setInt(14, 3);
+            ps.setInt(15, 10);
+            ps.setInt(16, 200);
+            ps.setInt(17, 35);
+            ps.setInt(18, 1);
+        }catch(SQLException e){
+            e.getMessage();
         }
     }//GEN-LAST:event_b_ConfirmarActionPerformed
 
